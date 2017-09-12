@@ -1,0 +1,657 @@
+* {
+    font-family: Gadugi;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+}
+
+/* --------------------Titlebar-------------------- */
+
+#titlebar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(68, 120, 196);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+.titlebar a {
+    display: block;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 14px 18px;
+    height: 52px;
+    float: right;
+    transition-duration: 0.1s;
+}
+
+.titlebutton:hover:not(.active), .titlebutton:focus:not(.active) {
+    background-color: dodgerblue;
+}
+
+.active {
+    background-color: rgb(47, 85, 151);
+    box-shadow: 0 -3px 0 0 white inset;
+}
+
+#name {
+    display: none;
+}
+
+/* --------------------Banner-------------------- */
+
+.banner {
+    margin-top: 52px;
+    padding-top: 80px;
+    height: 249px;
+    background-image: url("Mosaic Background.png");
+    background-position: center center;
+    background-size: cover;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    margin: 0;
+}
+
+.banner h4 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
+}
+
+#img {
+    display: block;
+    margin-top: 52px;
+    width: 100%;
+    height: 215px;
+    object-fit: cover;
+}
+
+/* --------------------Body-------------------- */
+
+@keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes popin {
+    0% {transform:scale(0.1)}
+    60% {transform:scale(1.1)}
+    100% {transform:scale(1)}
+}
+
+@keyframes fade {
+    0% {opacity: 1; transform:scale(1)}
+    30% {opacity: 0.9; transform:scale(1.1)}
+    100% {opacity: 0; transform:scale(0.1)}
+}
+
+/*----General Boxes Stuff----*/
+
+.rows {
+    margin: auto;
+    padding: 15px;
+    max-width: 1170px;
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
+.fade {
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 0.3s;
+}
+
+.content {
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+}
+
+.boxtitle {
+    margin: 12px 0px;
+}
+
+.line {
+	border: none;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    width: 100%;
+}
+
+.dropdownbutton {
+    float: right;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdownbutton:active {
+    background-color: rgb(220, 220, 220);
+}
+
+.dropdownbuttonactive {
+    background-color: rgb(220, 220, 220);
+}
+    
+.dropdownbutton img {
+    display: block;
+    padding: 4px 8px;
+    height: 30px;
+}
+
+.dropdown {
+    border-radius: 2px;
+    font-size: 12px;
+    overflow: auto;
+    display: none;
+    position: absolute;
+    padding: 5px 0px;
+    background-color: white;
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    right: 5px;
+    animation-name: popin;
+    animation-duration: 0.15s;
+}
+
+.dropdown input {
+    display: block;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 4px 16px;
+}
+
+.dropdown input:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+.show {display: block;}
+
+.post-club {
+    color: black;
+    font-size: 13px;
+    float: left;
+    padding: 6px 8px;
+    cursor: pointer;
+    height: 30px;
+}
+
+.post-club:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+.post-date {
+    font-size: 12px;
+    color: grey;
+    float: left;
+    margin: 6px 0px;
+}
+
+.post-title {
+    font-size: 15px;
+    margin: 0px 15px;
+}
+
+.post-content {
+    font-size: 13px;
+    text-align: left;
+    margin: 25px 30px;
+    white-space: pre-line;
+}
+
+.link {
+    font-size: 13px; 
+    text-align: center;
+    display: block;
+}
+
+.link:hover, .link:focus {
+    text-decoration: underline;
+}
+
+/*----Home Page----*/
+
+#leftbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#leftbar div {
+    margin-bottom: 30px;
+}
+
+/* Search Box */
+
+#search  {
+    padding: 0px 15px;
+}
+
+#searchbar {
+    margin: 0;
+    margin-bottom: 15px;
+    display: flex;
+    width: 100%;
+}
+
+#searchinput {
+    display: block;
+    float: left;
+    padding: 10px;
+    height: 35px;
+    background-color: rgb(220, 220, 220);
+    border: none;
+    width: 100%;
+}
+
+#searchbutton {
+    cursor: pointer;
+    float: left;
+    background-color: rgb(220, 220, 220);
+}
+
+#searchbutton:active {
+    background-color: rgb(200, 200, 200);
+}
+
+#searchbutton img {
+    display: block;
+    padding: 6px;
+    height: 35px;
+}
+
+/*----View Clubs Page----*/
+
+#clubs {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.tile {
+    border-radius: 2px;
+    flex-grow: 1;
+    width: 43%;
+    cursor: pointer;
+    margin: 15px;
+    float: left;
+    transition-duration: 0.1s;
+}
+
+.tile img {
+    display: block;
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+.tile:active {
+    opacity: 0.8;
+}
+
+/*----Club Home Page----*/
+
+#clubhome, #members, #manage {
+    min-width: 100%;
+}
+
+#menubar {
+    max-width: 100%;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border-top: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    display: flex;
+}
+
+.menubar a {
+    display: block;
+    font-size: 16px;
+    padding: 10px 18px;
+    padding-bottom: 12px;
+    float: left;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.menubar a:hover:not(.activetab) {
+    color: rgb(68, 120, 196);
+}
+
+.menubar:active {
+    background-color: rgb(220, 220, 220);
+}
+
+.activetab {
+    color: rgb(68, 120, 196);
+    box-shadow: 0 -3px 0 0 rgb(68, 120, 196) inset;
+}
+
+#club, #club2 {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+#info, #info2 {
+    margin: 14px 20px;
+    font-size: 14px;
+}
+
+.button {
+    border: none;
+    text-align: center;
+    display: block;
+    margin: 15px auto;
+    width: 100px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(68, 120, 196);
+    transition-duration: 0.1s;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.button:hover, .button:focus {
+    background-color: dodgerblue;
+}
+
+/*----Create Post/Create Club/Login/Register/Add Member----*/
+
+.createpost {
+    max-width: 900px;
+}
+
+.createpost input, textarea, select, button {
+    outline: none;
+    border: 1px solid rgb(200, 200, 200);
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.createpost input:focus, select:focus, textarea:focus {
+    transition-duration: 0.2s;
+    border: 1px solid rgb(68, 120, 196);
+}
+
+#submit {
+    font-size: 14px;
+    padding: 14px;
+    background-color: rgb(68, 120, 196);
+    border: none;
+    color: white;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+    
+#submit:hover, #submit:focus {
+	background-color: dodgerblue;
+}
+
+.register, .addmember {
+    max-width: 360px;
+}
+
+#registerbody .banner, #createclubbody .banner, #settingsbody .banner {
+    height: 215px;
+}
+
+.name {
+    font-size: 14px;
+    text-align: left;
+    font-weight: 600;
+    margin: 10px 0 6px 25px;
+}
+
+.username {
+    font-size: 13px;
+    text-align: left;
+    margin: 0 0 12px 25px;
+}
+/*----Settings----*/
+
+.settings {
+    max-width: 1000px;
+}
+
+.settings img {
+    border-radius: 50%;
+    width: 180px;
+}
+
+/*----Popup----*/
+
+#modal {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255,255,255,0.4);
+    padding-top: 100px;
+}
+
+#popup {
+    position: relative;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 10px;
+    width: 360px;
+    height: 140px;
+    margin: auto;
+    border: 1px solid dodgerblue;
+    box-shadow: 3px 3px 6px 0 rgba(0,0,0,0.2);
+    animation-name: popin;
+    animation-duration: 0.15s;
+}
+
+#close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#close:hover, #close:focus {
+    color: black;
+}
+
+/* --------------------Responsive Stuff-------------------- */
+
+.content::after {
+    display: table;
+}
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    padding: 15px;
+}
+
+@media only screen and (min-width: 600px) {
+    .col-1 {width: 5%;}
+    .col-2 {width: 10%;}
+    .col-3 {width: 15%;}
+    .col-4 {width: 20%;}
+    .col-5 {width: 25%;}
+    .col-6 {width: 30%;}
+    .col-7 {width: 35%;}
+    .col-8 {width: 40%;}
+    .col-9 {width: 45%;}
+    .col-10 {width: 50%;}
+    .col-11 {width: 55%;}
+    .col-12 {width: 60%;}
+    .col-13 {width: 65%;}
+    .col-14 {width: 70%;}
+    .col-15 {width: 75%;}
+    .col-16 {width: 80%;}
+    .col-17 {width: 85%;}
+    .col-18 {width: 90%;}
+    .col-19 {width: 95%;}
+    .col-20 {width: 100%;}
+    #name {display: block;}
+    #clubs {display: block;}
+    .tile {width: 255px;}
+}
+
+@media only screen and (max-width: 950px) {
+    #search .button {width: 90%;}
+    .button {width: 75%;}
+}
+
+
+
+
+
+
+		@keyframes slidein {
+			from {transform:scale(0.6)}
+			to {transform:scale(1)}
+		}
+	
+		@keyframes line {
+			from {max-width: 0px; border-bottom: 2px solid dodgerblue}
+			to {max-width: 100%; border-bottom: 2px solid dodgerblue}
+		}
+			
+		.outer {
+			display: table;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 30px;
+		}
+
+		.middle {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.inner {
+			max-width: 400px;
+			width: 100%;
+			padding: 25px 60px 20px 60px;
+			margin: 0 auto;
+			background-color: white;
+			box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3);
+			animation: slidein;
+			animation-duration: 0.4s;
+            overflow: hidden;
+		}
+		
+		h2 {
+			color: rgb(68, 120, 196);
+			text-align: center;
+		}
+		
+		h3 {
+			font-size: 22px;
+			font-weight: 400;
+			margin: 40px 0px 20px 0px;
+		}
+
+		.bhavay {
+			color: grey;
+			font-size: 16px;
+			margin: -26px 0 0 0;
+			display: block;
+			height: 24px;
+			width: 90px;
+			transition-duration: 0.3s;
+		}
+		
+		#loginbody input {
+			font-size: 16px;
+			padding: 4px 0;
+			outline: none;
+			display: block;
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid lightgrey;
+		}
+		
+		#loginbody input:focus + .bhavay {
+			transform: translateY(-26px);
+			font-size: 13px;
+			color: dodgerblue;
+		}
+		
+		#loginbody input:valid + .bhavay {
+			transform: translateY(-26px);
+			font-size: 13px;
+		}
+		
+		#one, #two {
+			margin: 1px auto 0 auto;
+			max-width: 100%;
+			transition-duration: 0.25s;
+			animation-duration: 0.3s;
+			border: none;
+			border-bottom: 2px solid rgba(0, 0, 0, 0);
+		}
+		
+		#loginbody .button {
+			text-align: center;
+			display: block;
+			margin: 15px 0;
+			width: 100px;
+			font-size: 14px;
+			color: white;
+			cursor: pointer;
+			background-color: rgb(68, 120, 196);
+			transition-duration: 0.1s;
+			padding: 10px;
+            float: right;
+		}
+
+#loginbody .button:hover, #loginbody .button:focus {
+	background-color: dodgerblue;
+}
+
+#password {
+     margin-top: 10px;
+}
+
+.error {
+    display: block;
+    font-size: 14px;
+    margin: 0px auto;
+	padding: 0 15px;
+	border: 1px solid #a94442;
+	color: #a94442;
+    background-color: #f2dede;
+    text-align: center;
+}
